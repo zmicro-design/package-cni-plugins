@@ -117,7 +117,7 @@ install() {
   # install
   log::info "[$(timestamp)][package][$name] installing to $cni_bin_dir ..."
   # os::install $source_bin_file $usr_bin_dir $name
-  mkdir -p $cni_bin_dir
+  sudo mkdir -p $cni_bin_dir
   sudo tar -zxvf $tmp_file -C $cni_bin_dir
   if [ "$?" != "0" ]; then
     log::error "[$(timestamp)][package][$name] failed to install to $cni_bin_dir ."
