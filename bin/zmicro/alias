@@ -9,11 +9,12 @@ help() {
   echo "  zmicro cni-plugins <args ...>"
   echo ""
 
-  cni-plugins --help
+  # cni-plugins --help
+  ls -al /opt/cni/bin
 }
 
 version() {
-  cni-plugins --version
+  echo $PACKAGE_CORE_VERSION
 }
 
 core() {
@@ -33,7 +34,7 @@ core() {
     version
     ;;
   *)
-    cni-plugins "$@"
+    help
     ;;
   esac
 }
